@@ -1,9 +1,20 @@
+const fetch = require('node-fetch');
+
 module.exports = {
     name: 'nootnoot',
     aliases: ['nn'],
     description: 'Get a super noot (with gif)',
-    execute(message, args) {
+    async execute(message, args) {
         message.channel.send('super noot with gif!');
-        
+        const url = `https://g.tenor.com/v1/search?q=pingu&key=${process.env.TENOR_API_KEY}&limit=8`;
+        const response = await fetch(url);
+        const json = await response.json();
+        function getRandomNoot(max) {
+            return Math.floor(Math.random() * max);
+        }
+        console.log('response', json.results.length);
+        const randomNoot = getRandomNoot(json.results.length);
+        message.channel.send(json.results[randomNoot].url);
+
     },
 };
