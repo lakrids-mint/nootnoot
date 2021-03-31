@@ -5,6 +5,7 @@ module.exports = {
     name: 'message',
     execute(message, client) {
         console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
+
         if (!message.content.startsWith(prefix) || message.author.bot) return;
 
         const args = message.content.slice(prefix.length).trim().split(/ +/);

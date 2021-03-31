@@ -1,10 +1,10 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix } = require('./config.json');
 require('dotenv').config();
 
 const client = new Discord.Client();
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
+
 for (const file of eventFiles) {
     const event = require(`./events/${file}`);
     if (event.once) {
@@ -13,6 +13,7 @@ for (const file of eventFiles) {
         client.on(event.name, (...args) => event.execute(...args, client));
     }
 };
+
 client.commands = new Discord.Collection();
 client.cooldowns = new Discord.Collection();
 
