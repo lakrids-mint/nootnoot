@@ -10,9 +10,9 @@ module.exports = {
             const response = await fetch(url);
             const json = await response.json();
             const randomNumber = this.getRandomNumber(json.results.length);
-            console.log('res', json.results[randomResult].url);
-            return (json.results[randomResult].url);
+            return (json.results[randomNumber].url);
         } catch (error) {
+            console.error('API call error: ', error);
             throw new Error('Something went wrong - did you do something illegal? :policepanda: Sometimes Pingu needs to rest. Come back later.');
         }
     },

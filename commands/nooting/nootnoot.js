@@ -7,8 +7,13 @@ module.exports = {
     description: 'Get a super noot (with gif)',
     async execute(message, args) {
         message.channel.send('super noot with gif!');
-        const result = await service.getGif('pingu');
-        console.log('result', result)
-        message.channel.send(result);
+        try {
+            const result = await service.getGif('pingu');
+            console.log('result', result)
+            message.channel.send(result);
+        } catch (error) {
+            console.error(error);
+            message.channel.send(error);
+        }
     },
 };
