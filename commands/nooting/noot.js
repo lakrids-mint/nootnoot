@@ -5,6 +5,7 @@ module.exports = {
     description: 'Get a simple noot',
     execute(message, args) {
 
-        message.channel.send('noot!', pinguGif);
+        message.channel.send('noot!');
+        message.channel.send(pinguGif);
     },
 };
