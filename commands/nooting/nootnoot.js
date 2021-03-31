@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['nn'],
     description: 'Get a super noot (with gif)',
     async execute(message, args) {
-        message.channel.send('NOOT NOOT');
+        message.channel.send('NOOT NOOT :pinga:');
         try {
             const result = await service.getGif('pingu');
             message.channel.send(result);
