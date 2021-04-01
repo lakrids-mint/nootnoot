@@ -6,7 +6,7 @@ module.exports = {
         const searchTerm = searchTerms[utils.getRandomNumber(searchTerms.length)];
         const userInput = args ? args[0] : '';
         console.log('arg', args);
-        const url = `https://g.tenor.com/v1/search?q=${searchTerm}%20${userInput}&key=${process.env.TENOR_API_KEY}&contentfilter=high`;
+        const url = `https://g.tenor.com/v1/search?q=${searchTerms[0]}%20${userInput}&key=${process.env.TENOR_API_KEY}&contentfilter=high`;
         console.log(url)
         try {
             const response = await fetch(url);

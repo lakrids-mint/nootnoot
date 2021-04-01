@@ -4,7 +4,7 @@ const service = require('../../services/gifAPI');
 module.exports = {
     name: 'nootnoot',
     aliases: ['nn'],
-    description: 'Noot Noot! Get a Pingu gif.',
+    description: 'Noot Noot! Get a Pingu gif. Add an optional search term after the command eg. .nn happy',
     cooldown: 4,
     args: true,
     async execute(message, args) {
