@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['nn'],
     description: 'Noot Noot! Get a Pingu gif. Add an optional search term after the command eg. .nn happy',
     cooldown: 4,
-    args: true,
+    //args: true,
     async execute(message, args) {
         try {
             const result = await service.getGif(['pingu', 'noot noot'], args);
